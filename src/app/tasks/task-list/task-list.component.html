@@ -1,1 +1,3 @@
-<app-task-details *ngFor="let tasks of tasks"></app-task-details>
+<div *ngFor="let task of tasks">
+    {{task?.id}} {{task?.title}} <button (click)="showTask(task)">Details</button>
+</div>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Task } from "../task";
+import { Router, ActivatedRoute } from "@angular/router";
+import { TasksService } from "../tasks.service";
 
 @Component({
   selector: 'app-task-details',
@@ -6,10 +9,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./task-details.component.css']
 })
 export class TaskDetailsComponent implements OnInit {
+  
+  task: Task;
+  constructor(private tasksService: TasksService, 
+              private router:Router, 
+              private activatedRoute:ActivatedRoute) {
+    
+   }
 
-  constructor() { }
-
+  goToList() {
+    this.router.navigate(['/tasks/']);
+  }
   ngOnInit() {
+    let taskId = this.activatedRoute.snapshot.params['id'];
+    this.task = this.tasksService.getTask(taskId);
   }
 
 }

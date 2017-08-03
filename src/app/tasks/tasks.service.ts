@@ -7,15 +7,19 @@ import {Task} from './task';
 export class TasksService {
 
     tasks: Array<Task> = [
-        {id: 'task01'},
-        {id: 'task02'}
+        {id: 'task01', title: 'first task', description: 'Lorem ipsum task 1'},
+        {id: 'task02', title: 'second task', description: 'Lorem ipsum task 2'}
     ];
 
-    constructor(/*private http: HttpClient*/) {
+    constructor() {
 
     }
 
     getTasks(): Array<Task>  {
         return this.tasks;
+    }
+
+    getTask(id: string):Task {
+       return this.tasks.find(x => x.id === id)
     }
 }
