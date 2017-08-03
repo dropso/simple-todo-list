@@ -1,3 +1,3 @@
-interface Task {
+export interface Task {
     id: string;
 }

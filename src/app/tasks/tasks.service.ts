@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import {Task} from './task';
 
 @Injectable()
 export class TasksService {
 
-    tasks: Array<{id}> = [
-        {id: 'task001'},
-        {id: 'task002'}
+    tasks: Array<Task> = [
+        {id: 'task01'},
+        {id: 'task02'}
     ];
 
-    constructor(private http: HttpClient) {
+    constructor(/*private http: HttpClient*/) {
 
     }
 
-    getTasks(): Array<{id}>  {
-        //const result = this.http.get<Array< {id}> >('http://localhost:8000/data/test.json').map(x => x['tasks']).;
+    getTasks(): Array<Task>  {
         return this.tasks;
     }
 }
