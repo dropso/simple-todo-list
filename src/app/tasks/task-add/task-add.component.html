@@ -1,0 +1,7 @@
+<div>
+  <div>Task ID: <input type="text" [(ngModel)]="newTask.id"></div>
+  <div>Title: <input type="text" [(ngModel)]="newTask.title"></div>
+  <div>Description: <input type="text" [(ngModel)]="newTask.description"></div>
+  <button (click)="onSubmit()">Submit</button>
+  <button (click)="onCancel()">Cancel</button>
+</div>

@@ -19,7 +19,15 @@ export class TasksService {
         return this.tasks;
     }
 
-    getTask(id: string):Task {
-       return this.tasks.find(x => x.id === id)
+    getTask(id: string): Task {
+       return this.tasks.find(x => x.id === id);
+    }
+
+    getDefaultTask(): Task {
+       return {id: '', title: '', description: ''};
+    }
+
+    addTask(task: Task) {
+        this.tasks.push(task);
     }
 }

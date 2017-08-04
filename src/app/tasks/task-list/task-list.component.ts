@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Task} from '../task';
 import {TasksService} from '../tasks.service';
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-task-list',
@@ -15,7 +15,7 @@ export class TaskListComponent implements OnInit {
     this.tasks = [];
    }
 
-  showTask(task:Task) {
+  showTask(task: Task) {
     this.router.navigate(['/tasks/' + task.id]);
   }
 
