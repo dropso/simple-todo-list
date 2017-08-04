@@ -7,6 +7,7 @@ import { TaskAddComponent } from './task-add/task-add.component';
 import { RouterModule } from '@angular/router';
 import { TaskAddBtnComponent } from './task-add-btn/task-add-btn.component';
 import { FormsModule } from '@angular/forms';
+import { TasksFilter} from './tasksFilter.pipe';
 
 
 @NgModule({
@@ -19,6 +20,6 @@ import { FormsModule } from '@angular/forms';
   providers: [
     TasksService
   ],
-  declarations: [TaskListComponent, TaskDetailsComponent, TaskAddComponent, TaskAddBtnComponent]
+  declarations: [TaskListComponent, TaskDetailsComponent, TaskAddComponent, TaskAddBtnComponent, TasksFilter]
 })
 export class TasksModule { }

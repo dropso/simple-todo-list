@@ -1,4 +1,7 @@
 <router-outlet></router-outlet>
-<div *ngFor="let task of tasks">
+<div>
+    Filter: <input type="text" [(ngModel)]="currentFilter"> <button (click)="filterTasks()">Search</button>
+</div>
+<div *ngFor="let task of tasks | tasksFilter: currentFilter">
     {{task?.id}} {{task?.title}} <button (click)="showTask(task)">Details</button>
 </div>

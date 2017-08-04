@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class TaskListComponent implements OnInit {
 
   tasks: Array<Task>;
+  currentFilter: string;
   constructor(private tasksService: TasksService,private router:Router) {
     this.tasks = [];
    }
@@ -18,6 +19,7 @@ export class TaskListComponent implements OnInit {
   showTask(task: Task) {
     this.router.navigate(['/tasks/' + task.id]);
   }
+
 
   ngOnInit() {
     this.tasks = this.tasksService.getTasks();

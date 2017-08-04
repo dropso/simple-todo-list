@@ -19,6 +19,10 @@ export class TasksService {
         return this.tasks;
     }
 
+    filterTasks(): Array<Task>  {
+        return this.tasks;
+    }
+
     getTask(id: string): Task {
        return this.tasks.find(x => x.id === id);
     }
