@@ -9,11 +9,12 @@ import { TaskAddBtnComponent } from './task-add-btn/task-add-btn.component';
 import { FormsModule } from '@angular/forms';
 import { TasksFilter} from './tasksFilter.pipe';
 import { TaskTileComponent } from './task-tile/task-tile.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   imports: [
-    CommonModule, RouterModule, FormsModule
+    CommonModule, RouterModule, FormsModule, HttpClientModule
   ],
   exports: [
     TaskListComponent

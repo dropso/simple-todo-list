@@ -2,7 +2,7 @@
 <div>
     Filter: <input type="text" [(ngModel)]="currentFilter"> <button (click)="filterTasks()">Search</button>
 </div>
-<app-task-tile *ngFor="let task of tasks | tasksFilter: currentFilter" [task]="task">    
+<app-task-tile *ngFor="let task of tasks " [task]="task">    <!--| tasksFilter: currentFilter-->
 </app-task-tile>
 <hr>
 <div> Number of tasks: {{tasks.length}} </div>

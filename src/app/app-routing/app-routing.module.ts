@@ -19,7 +19,9 @@ const appRoutes: Routes = [
     ]
   },
   {path: 'tasks/:id', component: TaskDetailsComponent},
+  {path: 'about', loadChildren: '../about/about.module#AboutModule'},
   {path: '**', component: PageNotFoundComponent}
+
 ];
 
 @NgModule({

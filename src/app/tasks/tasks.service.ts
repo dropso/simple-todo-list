@@ -1,22 +1,31 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/from';
 import {Task} from './task';
 
 @Injectable()
 export class TasksService {
 
-    tasks: Array<Task> = [
-        {id: 'task01', title: 'first task', description: 'Lorem ipsum task 1', isDone: false},
-        {id: 'task02', title: 'second task', description: 'Lorem ipsum task 2', isDone: true}
-    ];
+    tasks: Array<Task> = [];
 
-    constructor() {
+    constructor(private httpClient: HttpClient) {
 
     }
 
-    getTasks(): Array<Task>  {
-        return this.tasks;
+    getTasks(): Observable<Array<Task>>  {
+        if (this.tasks.length === 0) {
+            return  this.httpClient.get("http://localhost:3000/assets/tasks.json").map(data => {
+            this.tasks = data['tasks'];
+            return data['tasks'];
+            });
+        } else {
+            return Observable.create(observer => {
+                observer.next(this.tasks);
+                observer.complete();
+            });
+        }
     }
 
     getTask(id: string): Task {
