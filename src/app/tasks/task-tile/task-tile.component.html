@@ -1,6 +1,8 @@
  <div>
+   <span [ngClass]="{'doneTask': task.isDone, 'notDoneTask': !task.isDone }">
    {{task?.id}} 
    {{task?.title}} 
+   </span>
    <button (click)="showTask()">Details</button> 
    <button (click)="removeTask()">Remove</button> 
   </div>
