@@ -12,14 +12,17 @@ export class TaskListComponent implements OnInit {
 
   tasks: Array<Task>;
   currentFilter: string;
-  constructor(private tasksService: TasksService,private router:Router) {
+  constructor(private tasksService: TasksService, private router: Router) {
     this.tasks = [];
    }
 
-  showTask(task: Task) {
-    this.router.navigate(['/tasks/' + task.id]);
+  displayDoneTasks(): number {
+    return this.tasksService.getDoneTasks();
   }
 
+  displayNotDoneTasks(): number {
+    return this.tasksService.getNotDoneTasks();
+  }
 
   ngOnInit() {
     this.tasks = this.tasksService.getTasks();

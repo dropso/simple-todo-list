@@ -14,14 +14,19 @@ export class TaskDetailsComponent implements OnInit {
   constructor(private tasksService: TasksService, 
               private router:Router, 
               private activatedRoute:ActivatedRoute) {
-    
    }
 
   goToList() {
+    this.tasksService.updateTask(this.task);
     this.router.navigate(['/tasks/']);
   }
+
+  doUpdate() {
+    
+  }
+
   ngOnInit() {
-    let taskId = this.activatedRoute.snapshot.params['id'];
+    const taskId = this.activatedRoute.snapshot.params['id'];
     this.task = this.tasksService.getTask(taskId);
   }
 

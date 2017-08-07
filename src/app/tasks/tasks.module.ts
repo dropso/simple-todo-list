@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { TaskAddBtnComponent } from './task-add-btn/task-add-btn.component';
 import { FormsModule } from '@angular/forms';
 import { TasksFilter} from './tasksFilter.pipe';
+import { TaskTileComponent } from './task-tile/task-tile.component';
 
 
 @NgModule({
@@ -20,6 +21,6 @@ import { TasksFilter} from './tasksFilter.pipe';
   providers: [
     TasksService
   ],
-  declarations: [TaskListComponent, TaskDetailsComponent, TaskAddComponent, TaskAddBtnComponent, TasksFilter]
+  declarations: [TaskListComponent, TaskDetailsComponent, TaskAddComponent, TaskAddBtnComponent, TasksFilter, TaskTileComponent]
 })
 export class TasksModule { }

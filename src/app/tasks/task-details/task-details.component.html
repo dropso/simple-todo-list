@@ -1,6 +1,7 @@
 <div>
   Id: {{task?.id}} <br>
   Title: {{task?.title}} <br>
-  Description: {{task?.description}}
+  Description: {{task?.description}} <br>
+  IsDone: <input type="checkbox" [(ngModel)]="task.isDone" [checked]="doUpdate()">
   <button (click)="goToList()">Go back to list</button>
 </div>

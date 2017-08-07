@@ -18,8 +18,11 @@ export class TaskAddComponent implements OnInit {
   ngOnInit() {
   }
   onSubmit() {
-    this.tasksService.addTask(this.newTask);
-    this.router.navigate(['../']);
+    if (this.tasksService.addTask(this.newTask)) { this.router.navigate(['../']); }
+    else {
+      alert("Cannot add task");
+    }
+    
   }
   onCancel() {
     this.router.navigate(['../']);
